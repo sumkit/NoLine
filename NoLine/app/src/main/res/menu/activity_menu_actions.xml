@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/ticket" android:icon="@mipmap/ticket"
+        app:showAsAction="always|withText"
+        android:title="Tickets"/>
+    <item
+        android:id="@+id/qr_code" android:icon="@mipmap/qr_code"
+        app:showAsAction="always|withText"
+        android:title="Reset"/>
+    <item
+        android:id="@+id/profile" android:icon="@mipmap/profile"
+        app:showAsAction="always|withText"
+        android:title="About">
+    </item>
+</menu>
