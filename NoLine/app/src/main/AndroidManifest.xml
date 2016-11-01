@@ -22,7 +22,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.ScannerActivity"></activity>
+        <activity android:name=".Activities.ScannerActivity" />
+        <activity android:name=".Activities.ProfileActivity"></activity>
     </application>
 
 </manifest>

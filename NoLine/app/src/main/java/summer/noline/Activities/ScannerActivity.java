@@ -39,6 +39,8 @@ public class ScannerActivity extends AppCompatActivity {
             case R.id.qr_code:
                 return true;
             case R.id.profile:
+                Intent toPro = new Intent(ScannerActivity.this, ProfileActivity.class);
+                startActivity(toPro);
                 return true;
 
             default:

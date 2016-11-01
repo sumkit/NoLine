@@ -2,23 +2,31 @@ package summer.noline.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import summer.noline.R;
 
-public class MainActivity extends AppCompatActivity {
-    private ActionBar actionBar;
+public class ProfileActivity extends AppCompatActivity {
+
+    private EditText name, phoneNumber;
+    private Spinner citiesSpinner;
+    private TextView payment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
-        actionBar = this.getSupportActionBar();
-        actionBar.setTitle("Tickets");
+        name = (EditText) findViewById(R.id.name);
+        phoneNumber = (EditText) findViewById(R.id.phoneNumber);
+        citiesSpinner = (Spinner) findViewById(R.id.spinner);
+        payment = (TextView) findViewById(R.id.payment);
     }
 
     @Override
@@ -32,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.ticket:
+                Intent toTix = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(toTix);
                 return true;
 
             case R.id.qr_code:
-                Intent toQR = new Intent(MainActivity.this, ScannerActivity.class);
+                Intent toQR = new Intent(ProfileActivity.this, ScannerActivity.class);
                 startActivity(toQR);
                 return true;
             case R.id.profile:
-                Intent toPro = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(toPro);
                 return true;
 
             default:
