@@ -7,15 +7,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ListView;
 
+import java.util.ArrayList;
+
+import summer.noline.Database.Venue;
 import summer.noline.R;
+import summer.noline.VenueListAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBar actionBar;
+    private ListView listView;
+    private ArrayList<Venue> venues = new ArrayList<Venue>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listView = (ListView) findViewById(R.id.listview);
+
+        final String imageUrl = "https://api.learn2crack.com/android/images/donut.png";
+        final VenueListAdapter venueListAdapter = new VenueListAdapter(this, venues);
+        listView.setAdapter(venueListAdapter);
+
+        Venue v = new Venue("Club 323", imageUrl, 20, "4614 Fifth Avenue, Pittsburgh, PA");
+        venues.add(v);
+        venueListAdapter.add(v);
+        venueListAdapter.notifyDataSetChanged();
 
         actionBar = this.getSupportActionBar();
         actionBar.setTitle("Tickets");
@@ -47,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
         }
     }
 }

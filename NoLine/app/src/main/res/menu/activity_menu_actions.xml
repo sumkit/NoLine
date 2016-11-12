@@ -10,10 +10,10 @@
     <item
         android:id="@+id/qr_code" android:icon="@mipmap/qr_code"
         app:showAsAction="always|withText"
-        android:title="Reset"/>
+        android:title="Check In"/>
     <item
         android:id="@+id/profile" android:icon="@mipmap/profile"
         app:showAsAction="always|withText"
-        android:title="About">
+        android:title="Profile">
     </item>
 </menu>
